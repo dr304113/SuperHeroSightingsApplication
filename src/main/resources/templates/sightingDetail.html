@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+    <title>Super Hero Sightings</title>
+</head>
+
+<body>
+    <!-- Main Body of Page -->
+
+    <div class="mainContainer">
+
+        <!-- Start Nav -->
+
+        <nav class="navbar sticky-top navbar-expand bg-dark" style="justify-content:center; height: 125px;">
+            <img th:src="@{images/logo.png}" width="250x" class="d-inline-block align-top" alt="HERO logo">
+            <h1 style="color:rgb(230,230,230); padding-left: 120px;">Super Hero Sightings</h1>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="font-size:large;" href="#" id="navbarDropdown"
+                    role="navigation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="index">Home</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="sightings">Sightings</a>
+                    <a class="dropdown-item" href="heroes">Heroes/Villains</a>
+                    <a class="dropdown-item" href="superpowers">Superpowers</a>
+                    <a class="dropdown-item" href="locations">Locations</a>
+                    <a class="dropdown-item" href="organizations">Organizations</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- End Nav -->
+
+        <!-- Start News Ticker-->
+
+        <div class="container">
+            <div class="ticker">
+                <div class="title">
+                    <h5>Breaking News</h5>
+                </div>
+                <div class="news">
+                    <marquee class="news-content">
+                        <p>We are currently experiencing a substantial increase in the number of VILLAIN sightings in
+                            your area!</p>
+                        <p>Please seek the nearest super hero organization HQ for refuge.</p>
+                        <p>News brought to you in part by the Hero Education and Relationship Organization(HERO) &#8482;
+                        </p>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+
+        <!-- End News Ticker-->
+
+        <hr />
+
+        <!-- Start View Bubble -->
+
+        <div class="container" style="justify-content:center">
+            <div class="row m-4 border border-dark viewBubble">
+                <div class="col-6 text-right"><strong>ID</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${sighting.id}">display id</span>
+                </div>
+                <div class="col-6 text-right"><strong>Date</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${sighting.date}">display date</span>
+                </div>
+                <div class="col-6 text-right"><strong>Hero</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${sighting.hero.name}">display hero</span><br />
+                </div>
+                <div class="col-6 text-right"><strong>Location</strong></div>
+                <div class="col-6 text-left">
+                    <span th:text="${sighting.location.name}">
+                        display location</span><br />
+                    </span>
+                </div>
+                <div class="col-6 text-center" style="padding-top: 30px">
+                    <a href="#" th:href="sightings"><button type="submit" class="btn btn-outline-success">
+                            Back</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- End View Bubble -->
+
+
+    </div>
+
+    <!-- End main body -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>;
